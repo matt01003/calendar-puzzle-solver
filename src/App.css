@@ -1,5 +1,20 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: clear sans, helvetica neue, Arial, sans-serif;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -35,4 +50,74 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 25px 0px;
+}
+
+.cell-content {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  height: 100%;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.cell {
+  flex: 1;
+  aspect-ratio: 1;
+}
+
+.content {
+  width: 450px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 430px) {
+  .content {
+    padding: 0px 20px;
+    width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.board-container {
+  border-width: 0px 0px 0.5px 0.5px;
+  border-style: solid;
+  border-color: black;
+}
+
+.details {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 15px;
+  gap: 5px;
+}
+
+.button {
+  padding: 3px 8px;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  background-color: white;
+  border: 0.5px solid black;
 }
